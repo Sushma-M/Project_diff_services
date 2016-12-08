@@ -1,0 +1,47 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "WebSocketService",
+    "x-WM-API_ID" : "71c41a77-c566-49a6-bc7b-84343efa1b19",
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-SERVICE_ID" : "websocket",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "echo.websocket.org",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "WebSocketServiceVirtualController",
+    "description" : "WebSocket service swagger documentation"
+  } ],
+  "schemes" : [ "wss" ],
+  "paths" : {
+    "/websocket/invoke/" : {
+      "get" : {
+        "tags" : [ "WebSocketServiceVirtualController" ],
+        "operationId" : "websocket_WebSocketServiceVirtualController-invoke",
+        "security" : [ {
+          "WM_WebSocket_Service_Authorization" : [ ]
+        } ],
+        "x-WM-OUT-PARAMS-TYPE" : [ "#/definitions/RootResponse" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-IN-PARAMS-TYPE" : [ "#/definitions/RootRequest" ]
+      },
+      "x-WM-BASE_PATH" : "/websocket/invoke/",
+      "x-WM-TAG" : "WebSocketServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${websocket.websocket.scheme}://${websocket.websocket.host}${websocket.websocket.basepath}/"
+    }
+  },
+  "definitions" : {
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "websocket.RootRequest",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "websocket.RootResponse",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    }
+  }
+}

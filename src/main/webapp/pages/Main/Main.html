@@ -1,0 +1,176 @@
+<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
+    <wm-content name="content">
+        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
+        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
+            <wm-label padding="unset 0.5em" name="label1" fontsize="3" fontunit="em" caption="bind:Variables.javaserv1.dataSet.value"></wm-label>
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpane1" title="Soapservdata">
+                    <wm-grid title="Soap Serv Data" dataset="bind:Variables.serviceVariable1.dataSet" navigation="Basic" name="grid1">
+                        <wm-grid-column binding="conversionRateResult" caption="Conversion Rate Result" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                    </wm-grid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane2" title="Query Var data">
+                    <wm-grid title="Query Var data" dataset="bind:Variables.HrdbExecuteTestquery1.dataSet" navigation="Basic" name="grid2">
+                        <wm-grid-column binding="USER_ID" caption="User Id" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="ROLE" caption="Role" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="USERNAME" caption="Username" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="PASSWORD" caption="Password" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="TENANT_ID" caption="Tenant Id" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                    </wm-grid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane3" title="procedure serv data">
+                    <wm-grid title="Proc var data" dataset="bind:Variables.AdventureWorks2014ExecuteProcquery.dataSet" navigation="Basic" name="grid3">
+                        <wm-grid-column binding="Name" caption="Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                    </wm-grid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane4" title="websocketdata">
+                    <wm-grid title="websocket data" dataset="bind:Variables.Websocket2.dataSet" navigation="Basic" name="grid7"></wm-grid>
+                    <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button1" on-click="Variables.Websocket2.send()"></wm-button>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane5" title="Feed data">
+                    <wm-grid title="Feed Serv data" dataset="bind:Variables.FeedServiceGetFeedWithHttpConfig.dataSet" navigation="Basic" name="grid4">
+                        <wm-grid-column binding="author" caption="Author" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="title" caption="Title" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="feedType" caption="Feed Type" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="description" caption="Description" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="link" caption="Link" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="encoding" caption="Encoding" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="entries[0].author" caption="Entries[0] Author" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="entries[0].title" caption="Entries[0] Title" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="entries[0].updatedDate" caption="Entries[0] Updated Date" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="entries[0].description" caption="Entries[0] Description" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                    </wm-grid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane6" title="Rest-googleapis data">
+                    <wm-grid title="GoogleApis data" dataset="bind:Variables.GoogleapisInvoke.dataSet" navigation="Basic" name="grid5">
+                        <wm-grid-column binding="status" caption="Status" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.summary" caption="Route Summary" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.bounds.southwest.lng" caption="Route.bounds.southwest Lng" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.bounds.southwest.lat" caption="Route.bounds.southwest Lat" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.bounds.northeast.lng" caption="Route.bounds.northeast Lng" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.bounds.northeast.lat" caption="Route.bounds.northeast Lat" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.leg.duration.text" caption="Route.leg.duration Text" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.leg.duration.value" caption="Route.leg.duration Value" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.leg.distance.text" caption="Route.leg.distance Text" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                        <wm-grid-column binding="route.leg.distance.value" caption="Route.leg.distance Value" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                    </wm-grid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane7" title="LiveVar Data">
+                    <wm-livegrid formlayout="dialog" name="livegrid1">
+                        <wm-grid gridfirstrowselect="true" editmode="dialog" title="Employee List" dataset="bind:Variables.HrdbEmployeeData.dataSet" navigation="Basic" name="grid6">
+                            <wm-grid-column binding="empId" caption="Emp Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-grid-column>
+                            <wm-grid-column binding="firstname" caption="Firstname" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-column binding="lastname" caption="Lastname" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-column binding="street" caption="Street" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-column binding="city" caption="City" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-column binding="state" caption="State" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-column binding="zip" caption="Zip" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-column binding="birthdate" caption="Birthdate" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-grid-column>
+                            <wm-grid-column binding="picurl" caption="Picurl" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-column binding="jobTitle" caption="Job Title" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-grid-action>
+                            <wm-grid-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-grid-row-action>
+                            <wm-grid-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-grid-row-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" errormessage="" title="Employee Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.HrdbEmployeeData.dataSet" captionalign="left" captionposition="top" name="liveform1">
+                            <wm-layoutgrid columns="3" name="layoutgrid1">
+                                <wm-gridrow name="gridrow1">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                                        <wm-form-field name="firstname" displayname="Firstname" required="false" show="true" generator="assigned" primary-key="false" key="firstname" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn2">
+                                        <wm-form-field name="lastname" displayname="Lastname" required="false" show="true" generator="assigned" primary-key="false" key="lastname" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                        <wm-form-field name="street" displayname="Street" required="false" show="true" generator="assigned" primary-key="false" key="street" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow2">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                                        <wm-form-field name="city" displayname="City" required="false" show="true" generator="assigned" primary-key="false" key="city" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                                        <wm-form-field name="state" displayname="State" required="false" show="true" generator="assigned" primary-key="false" key="state" type="string" is-related="false" maxchars="2" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                                        <wm-form-field name="zip" displayname="Zip" required="false" show="true" generator="assigned" primary-key="false" key="zip" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                                        <wm-form-field name="birthdate" displayname="Birthdate" required="false" show="true" generator="assigned" primary-key="false" key="birthdate" type="date" is-related="false" pc-display="true" mobile-display="true" widget="date"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn8">
+                                        <wm-form-field name="picurl" displayname="Picurl" required="false" show="true" generator="assigned" primary-key="false" key="picurl" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn9">
+                                        <wm-form-field name="jobTitle" displayname="Job Title" required="false" show="true" generator="assigned" primary-key="false" key="jobTitle" type="string" is-related="false" maxchars="40" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow4">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn10">
+                                        <wm-form-field name="username" displayname="Username" required="false" show="true" generator="assigned" primary-key="false" key="username" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn11">
+                                        <wm-form-field name="password" displayname="Password" required="false" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn12">
+                                        <wm-form-field name="role" displayname="Role" required="false" show="true" generator="assigned" primary-key="false" key="role" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                        widget="text"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow5">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                                        <wm-form-field name="tenantId" displayname="Tenant Id" required="false" show="true" generator="assigned" primary-key="false" key="tenantId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
+                                        widget="number"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn14">
+                                        <wm-form-field name="department" displayname="Department" required="false" show="true" generator="assigned" primary-key="false" key="department" type="list" is-related="true" pc-display="true" mobile-display="true"
+                                        widget="select"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn15">
+                                        <wm-form-field name="employeeByManagerId" displayname="Employee By Manager Id" required="false" show="true" generator="assigned" primary-key="false" key="employeeByManagerId" type="list" is-related="true" pc-display="true"
+                                        mobile-display="true" widget="select"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-field name="empId" displayname="Emp Id" required="true" show="false" generator="identity" primary-key="true" key="empId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane8" title="FileUpload Serv">
+                    <wm-fileupload name="fileupload1" service="FileService" operation="uploadFile" on-success="Variables.FileServiceListFiles.invoke()"></wm-fileupload>
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.FileServiceListFiles.dataSet" navigation="Basic" name="livelist1">
+                        <wm-listtemplate layout="inline" name="listtemplate1">
+                            <wm-container class="media-left" name="container1">
+                                <wm-picture width="32pt" height="32pt" name="Picture" shape="circle" picturesource="bind:Variables.FileServiceListFiles.dataSet.path" class="media-object"></wm-picture>
+                            </wm-container>
+                            <wm-container class="media-body" padding="unset unset unset 1.25em" name="container2">
+                                <wm-label name="Name" class="p media-heading" caption="bind:Variables.FileServiceListFiles.dataSet.name" fontsize="1.143" fontunit="em"></wm-label>
+                                <wm-label name="JobTitle" caption="bind:Variables.FileServiceListFiles.dataSet.size" class="p text-muted"></wm-label>
+                            </wm-container>
+                            <wm-container class="media-right media-top" name="container3">
+                                <wm-button class="btn-transparent" iconclass="wi wi-share" fontsize="18" fontunit="pt" name="button2"></wm-button>
+                            </wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
+                </wm-accordionpane>
+            </wm-accordion>
+        </wm-page-content>
+        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+</wm-page>

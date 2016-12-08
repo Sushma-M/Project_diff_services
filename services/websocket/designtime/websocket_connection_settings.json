@@ -1,0 +1,15 @@
+{
+  "endpointAddress" : "wss://echo.websocket.org/",
+  "method" : "GET",
+  "contentType" : "",
+  "sampleRequestBody" : "test1",
+  "authType" : "NONE",
+  "headers" : { },
+  "queryParams" : { },
+  "sampleWebSocketResponse" : {
+    "responseBody" : "test1",
+    "convertedResponse" : null,
+    "statusCode" : 0,
+    "contentType" : ""
+  }
+}

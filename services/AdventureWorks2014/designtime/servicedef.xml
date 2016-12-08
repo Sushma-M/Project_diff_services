@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AdventureWorks2014" type="DataService" springFile="AdventureWorks2014.spring.xml">
+    <operation operationType="procedure" name="Procquery">
+        <parameter name="deptid" typeRef="java.lang.Integer" isList="false" parameterType="IN"/>
+        <parameter name="Name" typeRef="java.lang.String" isList="false" parameterType="OUT"/>
+        <return typeRef="AdventureWorks2014ProcqueryrtnType" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="AdventureWorks2014ProcqueryrtnType" name="AdventureWorks2014ProcqueryrtnType">
+            <element name="Name" typeRef="java.lang.String" isList="false"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.Department">
+            <element name="departmentId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employeeDepartmentHistories" typeRef="com.testserv_26oct.adventureworks2014.EmployeeDepartmentHistory" isList="true" allowNull="true"/>
+            <element name="groupName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="modifiedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.Employee">
+            <element name="birthDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="currentFlag" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="employeeDepartmentHistories" typeRef="com.testserv_26oct.adventureworks2014.EmployeeDepartmentHistory" isList="true" allowNull="true"/>
+            <element name="employeePayHistories" typeRef="com.testserv_26oct.adventureworks2014.EmployeePayHistory" isList="true" allowNull="true"/>
+            <element name="gender" typeRef="java.lang.String" allowNull="true"/>
+            <element name="hireDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="jobCandidates" typeRef="com.testserv_26oct.adventureworks2014.JobCandidate" isList="true" allowNull="true"/>
+            <element name="jobTitle" typeRef="java.lang.String" allowNull="true"/>
+            <element name="loginId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="maritalStatus" typeRef="java.lang.String" allowNull="true"/>
+            <element name="modifiedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="nationalIdnumber" typeRef="java.lang.String" allowNull="true"/>
+            <element name="organizationLevel" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="organizationNode" typeRef="java.lang.Byte" isList="true" allowNull="true"/>
+            <element name="rowguid" typeRef="java.lang.String" allowNull="true"/>
+            <element name="salariedFlag" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="sickLeaveHours" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="vacationHours" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.EmployeeDepartmentHistory">
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="department" typeRef="com.testserv_26oct.adventureworks2014.Department" allowNull="true"/>
+            <element name="departmentId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employee" typeRef="com.testserv_26oct.adventureworks2014.Employee" allowNull="true"/>
+            <element name="endDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="modifiedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="shift" typeRef="com.testserv_26oct.adventureworks2014.Shift" allowNull="true"/>
+            <element name="shiftId" typeRef="java.lang.Byte" allowNull="true"/>
+            <element name="startDate" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.EmployeePayHistory">
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employee" typeRef="com.testserv_26oct.adventureworks2014.Employee" allowNull="true"/>
+            <element name="modifiedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="payFrequency" typeRef="java.lang.Byte" allowNull="true"/>
+            <element name="rate" typeRef="java.lang.Double" allowNull="true"/>
+            <element name="rateChangeDate" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.JobCandidate">
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employee" typeRef="com.testserv_26oct.adventureworks2014.Employee" allowNull="true"/>
+            <element name="jobCandidateId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="modifiedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="resume" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.Shift">
+            <element name="employeeDepartmentHistories" typeRef="com.testserv_26oct.adventureworks2014.EmployeeDepartmentHistory" isList="true" allowNull="true"/>
+            <element name="endTime" typeRef="java.util.Date" allowNull="true"/>
+            <element name="modifiedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+            <element name="shiftId" typeRef="java.lang.Byte" allowNull="true"/>
+            <element name="startTime" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.Table13">
+            <element name="column2" typeRef="java.lang.String" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.TableName">
+            <element name="column1" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.Vemployee">
+            <element name="additionalContactInfo" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addressLine1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addressLine2" typeRef="java.lang.String" allowNull="true"/>
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="countryRegionName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emailAddress" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emailPromotion" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="firstName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobTitle" typeRef="java.lang.String" allowNull="true"/>
+            <element name="lastName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="middleName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="phoneNumber" typeRef="java.lang.String" allowNull="true"/>
+            <element name="phoneNumberType" typeRef="java.lang.String" allowNull="true"/>
+            <element name="postalCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="stateProvinceName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" allowNull="true"/>
+            <element name="title" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.VemployeeDepartment">
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="department" typeRef="java.lang.String" allowNull="true"/>
+            <element name="firstName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="groupName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobTitle" typeRef="java.lang.String" allowNull="true"/>
+            <element name="lastName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="middleName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="startDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" allowNull="true"/>
+            <element name="title" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.VemployeeDepartmentHistory">
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="department" typeRef="java.lang.String" allowNull="true"/>
+            <element name="endDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="firstName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="groupName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="lastName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="middleName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="shift" typeRef="java.lang.String" allowNull="true"/>
+            <element name="startDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" allowNull="true"/>
+            <element name="title" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.VjobCandidate">
+            <element name="addr_loc_city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addr_loc_countryRegion" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addr_loc_state" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addr_postalCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="addr_type" typeRef="java.lang.String" allowNull="true"/>
+            <element name="businessEntityId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="email" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobCandidateId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="modifiedDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="name_first" typeRef="java.lang.String" allowNull="true"/>
+            <element name="name_last" typeRef="java.lang.String" allowNull="true"/>
+            <element name="name_middle" typeRef="java.lang.String" allowNull="true"/>
+            <element name="name_prefix" typeRef="java.lang.String" allowNull="true"/>
+            <element name="name_suffix" typeRef="java.lang.String" allowNull="true"/>
+            <element name="skills" typeRef="java.lang.String" allowNull="true"/>
+            <element name="webSite" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.VjobCandidateEducation">
+            <element name="edu_degree" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_endDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="edu_gpa" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_gpascale" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_level" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_loc_city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_loc_countryRegion" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_loc_state" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_major" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_minor" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_school" typeRef="java.lang.String" allowNull="true"/>
+            <element name="edu_startDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="jobCandidateId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.testserv_26oct.adventureworks2014.VjobCandidateEmployment">
+            <element name="emp_endDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="emp_functionCategory" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_industryCategory" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_jobTitle" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_loc_city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_loc_countryRegion" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_loc_state" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_orgName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_responsibility" typeRef="java.lang.String" allowNull="true"/>
+            <element name="emp_startDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="jobCandidateId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.expression.QueryFilter">
+            <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeType" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeValue" allowNull="true"/>
+            <element name="filterCondition" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomProcedure">
+            <element name="procedureParams" typeRef="com.wavemaker.runtime.data.model.CustomProcedureParam" isList="true" allowNull="true"/>
+            <element name="procedureStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomQuery">
+            <element name="nativeSql" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="queryParams" typeRef="com.wavemaker.runtime.data.model.CustomQueryParam" isList="true" allowNull="true"/>
+            <element name="queryStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

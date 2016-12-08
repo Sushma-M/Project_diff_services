@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CurrencyConvertor" type="SoapService" springFile="CurrencyConvertor.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.testserv_26oct.services.currencyconvertor.ConversionRateResponse" name="ConversionRateResponse">
+            <element name="conversionRateResult" typeRef="java.lang.Double" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>
